@@ -68,17 +68,22 @@ function draw() {
   background(0);
   packageSprite.x= packageBody.position.x;
   packageSprite.y= packageBody.position.y; 
-  keyPressed();
   drawSprites();
  
 }
 
 function keyPressed() {
- if (keyCode === DOWN_ARROW) {
-	// Look at the hints in the document and understand how to make the package body fall only on
+ 	if (keyCode === LEFT_ARROW) {
+		helicopterSprite.x=helicopterSprite.x-20; translation={x:-20,y:0} Matter.Body.translate(packageBody, translation) 
+	}
 	
-	Matter.Body.setStatic(packageBody,false);
-	packageBody.restitution=0.5;
+	else 
+	if (keyCode === RIGHT_ARROW) { 
+		helicopterSprite.x=helicopterSprite.x+20; translation={x:20,y:0} Matter.Body.translate(packageBody, translation) 
+	} 
+	else 
+	if (keyCode === DOWN_ARROW) { Matter.Body.setStatic(packageBody,false); 
+	}	
           
   }
-}
+
