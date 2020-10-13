@@ -86,7 +86,8 @@ function keyPressed() {
 	} 
 	else 
 	if (keyCode === DOWN_ARROW) { 
-		Matter.Body.setStatic(packageBody,false); 
+		Matter.Body.setStatic(packageBody,false);
+		packageBody restitution{0.8};
 	}	
           
   }
